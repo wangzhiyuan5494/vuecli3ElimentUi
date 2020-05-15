@@ -1,15 +1,27 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Login from '../components/login/login.vue'
+import Register from '../components/register/register.vue'
 
 Vue.use(VueRouter)
 
   const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
+    {
+      path: '/',
+      name: 'Home',
+      component: Home
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: Register
+    },
   {
     path: '/about',
     name: 'About',
@@ -20,8 +32,15 @@ Vue.use(VueRouter)
   }
 ]
 
+// router.beforeEach((to, from, next) => {
+//   if(this.islogin){
+//     to
+//   }else{
+
+//   }
+// })
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes
 })
